@@ -23,6 +23,6 @@ public class Skill {
   @Column(unique = true)
   private String name;
 
-  @ManyToMany(cascade = CascadeType.ALL, mappedBy = "skills")
+  @ManyToMany(cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "skills")
   private Set<User> users = new HashSet<>();
 }

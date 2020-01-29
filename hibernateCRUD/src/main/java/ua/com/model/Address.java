@@ -30,6 +30,6 @@ public class Address {
   @Column(unique = true)
   private String code;
 
-  @OneToMany(mappedBy = "address", fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
   private Set<User> users = new HashSet<>();
 }
